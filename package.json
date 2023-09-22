@@ -10,7 +10,6 @@
     "babel": "npx babel . --out-dir=compiled --presets=@babel/preset-react --ignore=node_modules,compiled --source-maps=inline --watch",
     "live": "npx live-server",
     "start": "npm run babel & npm run live"
-
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
