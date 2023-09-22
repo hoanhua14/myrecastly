@@ -4,7 +4,7 @@ import VideoPlayer from './VideoPlayer.js';
 
 var App = () => {
   const [videos, setVideos] = React.useState(exampleVideoData)
-
+  const [currentVideo, setCurrentVideo] = React.useState(exampleVideoData[0])
   return (
     <div>
       <nav className="navbar">
@@ -14,10 +14,12 @@ var App = () => {
       </nav>
       <div className="row">
         <div className="col-md-7">
-          <VideoPlayer />
+          <VideoPlayer video={currentVideo}/>
         </div>
         <div className="col-md-5">
-          <VideoList videos={videos}/>
+          <VideoList
+          setCurrentVideo={(v) => setCurrentVideo(v)}
+          videos={videos}/>
         </div>
       </div>
     </div>

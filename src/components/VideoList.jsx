@@ -1,10 +1,12 @@
 import VideoListEntry from './VideoListEntry.js';
 
-var VideoList = ({videos}) => {
+var VideoList = ({videos, setCurrentVideo}) => {
   return (
     <div className="video-list">
       {videos.map((video) => (
-        <VideoListEntry video={video} key={video.etag}/>
+        <VideoListEntry
+        setCurrentVideo={(v) => setCurrentVideo(v)}
+        video={video} key={video.etag}/>
       ))}
     </div>
   );
